@@ -30,33 +30,75 @@ public class Lab2P1 {
                 int numero = scanner.nextInt();
 
                 if (numero > 31.27){
-        int cantidadDigitos = 0;
-        int pares = 0;
-        int impares = 0;
-        int tempNumero = numero;
+                    int cantidadDigitos = 0;
+                    int pares = 0;
+                    int impares = 0;
+                    int tempNumero = numero;
 
-        while (tempNumero > 0) {
-            int digito = tempNumero % 10;
-            cantidadDigitos++;
-            if (digito % 2 == 0) {
-                pares++;
-            } else {
-                impares++;
+                    while (tempNumero > 0) {
+                         int digito = tempNumero % 10;
+                         cantidadDigitos++;
+                         if (digito % 2 == 0) {
+                           pares++;
+                           
+            }            else {
+                         impares++;
             }
-            tempNumero = tempNumero / 10;
+                         tempNumero = tempNumero / 10;
+       }
+
+                            System.out.println("Numero ingresado: " + numero);
+                            System.out.println("Cantidad de digitos: " + cantidadDigitos);
+                            System.out.println("Cantidad de digitos pares: " + pares);
+                            System.out.println("Cantidad de digitos impares: " + impares);
+                
+                } 
+            else {
+             System.out.println("el numero tiene que se mayor a la raiz cuadrada de 978");
+            }  
+                
+                  
+      }   
+                    
+           
+                    if (opcion  == 2) {
+             double MATRICULA_BASE = 7000.0;
+
+       
+        System.out.print("Ingrese la cantidad de materias a matricular: ");
+        int cantidadMaterias = scanner.nextInt();
+
+       
+        System.out.print("Ingrese el año de ingreso a la institucion: ");
+        int añoIngreso = scanner.nextInt();
+
+       
+        double costoPorMateria;
+        if (cantidadMaterias < 3) {
+            costoPorMateria = MATRICULA_BASE * 0.60;
+        } else {
+            costoPorMateria = MATRICULA_BASE * 0.40;
         }
 
-        System.out.println("Número ingresado: " + numero);
-        System.out.println("Cantidad de dígitos: " + cantidadDigitos);
-        System.out.println("Cantidad de dígitos pares: " + pares);
-        System.out.println("Cantidad de dígitos impares: " + impares);
-                } 
-            }
-            else {
-                    System.out.print ("el numero tiene que se mayor a la raiz cuadrada de 978");
-                }    
-                    
-                
+        double costoMatricula = 0;
+        int i = 0;
+        while (i < cantidadMaterias) {
+            costoMatricula += costoPorMateria;
+            i++;
+        }
+
+        if (añoIngreso >= 2019 && añoIngreso <= 2024) {
+            costoMatricula = costoMatricula * 0.90; 
+        }
+
+        double costoServicios = costoMatricula * 0.05;
+
+        double costoTotal = costoMatricula + costoServicios;
+
+        System.out.println("Costo de la matricula: "+ costoMatricula);
+        System.out.println("Costo de los servicios estudiantiles: "+costoServicios);
+        System.out.println("Costo total a pagar: "+ costoTotal);
+            }    
             }
         }
         
