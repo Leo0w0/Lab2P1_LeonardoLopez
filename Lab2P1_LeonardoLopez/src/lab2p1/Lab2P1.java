@@ -69,7 +69,7 @@ public class Lab2P1 {
         int cantidadMaterias = scanner.nextInt();
 
        
-        System.out.print("Ingrese el año de ingreso a la institucion: ");
+        System.out.print("Ingrese el anio de ingreso a la institucion: ");
         int añoIngreso = scanner.nextInt();
 
        
@@ -98,10 +98,49 @@ public class Lab2P1 {
         System.out.println("Costo de la matricula: "+ costoMatricula);
         System.out.println("Costo de los servicios estudiantiles: "+costoServicios);
         System.out.println("Costo total a pagar: "+ costoTotal);
-            }    
+                    }
+             if (opcion == 3){
+                 System.out.print("Ingrese el primer numero: ");
+                int A = scanner.nextInt();
+                System.out.print("Ingrese el segundo numero: ");
+                int B = scanner.nextInt();
+                System.out.print("Ingrese el tercer numero: ");
+                int C = scanner.nextInt();
+        
+                int distanciaA = (A - B) + (A - C);
+                     if (distanciaA < 0) {
+                     distanciaA = -distanciaA;
+        }
+
+                    int distanciaB = (B - A) + (B - C);
+                    if (distanciaB < 0) {
+                     distanciaB = -distanciaB;
+        }
+
+                    int distanciaC = (C - A) + (C - B);
+                        if (distanciaC < 0) {
+                         distanciaC = -distanciaC;
+        }
+
+                    if (distanciaA > distanciaB && distanciaA > distanciaC) {
+                     System.out.println("El numero mas alejado es: " + A);
+        }           else if (distanciaB > distanciaA && distanciaB > distanciaC) {
+                      System.out.println("El numero mas alejado es: " + B);
+        }            else if (distanciaC > distanciaA && distanciaC > distanciaB) {
+                      System.out.println("El numero mas alejado es: " + C);
+        }           else {
+                     System.out.println("No hay numero mas alejado.");
+            
+            
+             }
+            } 
+             System.out.print("Quieres continuar? (s/n): ");
+            respuesta = scanner.next().charAt(0);
+            
+            scanner.close ();
             }
         }
-        
-    }
+    }  
+    
     
 
